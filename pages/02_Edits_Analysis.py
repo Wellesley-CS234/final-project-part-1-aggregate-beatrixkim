@@ -5,12 +5,10 @@ import matplotlib.pyplot as plt
 st.title("Crystal Zhao: Popular Articles - Edits Analysis")
 st.markdown("---")
 
-DATA_FILE_KEY = 'st02_data'
-
-if 'student_data' in st.session_state and DATA_FILE_KEY in st.session_state['student_data']:
-    df = st.session_state['student_data'][DATA_FILE_KEY]
+if 'student_data' not in st.session_state or st.session_state['student_data']['st02_df'].empty:
+    st.warning("Data not loaded. Please ensure the main Home Page ran successfully and the data files exist.")
 else:
-    df = None
+    df = st.session_state['student_data']['st02_df']
 
 if df is None or df.empty:
     st.warning("Data not loaded. Please ensure the Home Page ran successfully and the data files exist.")

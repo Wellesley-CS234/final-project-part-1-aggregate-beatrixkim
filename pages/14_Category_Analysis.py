@@ -14,7 +14,7 @@ st.set_page_config(layout="wide", page_title="Climate Change Article Types Analy
 @st.cache_data
 def load_data():
     # Load the CSV
-    df = pd.read_csv('../data/st14_data.csv')
+    df = pd.read_csv('data/st14_data.csv')
 
     # Get all article columns
     article_columns = [col for col in df.columns if col.startswith('article_')]
